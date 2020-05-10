@@ -5,6 +5,7 @@ import { GlobalStyles } from './global';
 import { theme } from './theme';
 import { Burger, Menu } from './components';
 import FocusLock from 'react-focus-lock';
+import { MobileView, isMobile } from 'react-device-detect';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -19,14 +20,15 @@ function App() {
         <GlobalStyles />
         <div ref={node}>
           <FocusLock disabled={!open}>
-            <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-            <Menu open={open} setOpen={setOpen} id={menuId} />
+            <MobileView>
+              <Burger open={open} setOpen={setOpen} aria-controls={menuId}k />
+            </MobileView>
+            <Menu open={open} setOpen={setOpen} id={menuId} isMobile={isMobile} />
           </FocusLock>
         </div>
         <div>
-          <h1>Hello. This is burger menu tutorial</h1>
-          <img src="https://image.flaticon.com/icons/svg/2016/2016012.svg" alt="burger icon" />
-          <small>Icon made by <a href="https://www.freepik.com/home">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></small>
+          <h1>robert xu</h1>
+          <img src="https://image.flaticon.com/icons/svg/2813/2813094.svg" alt="burger icon" />
         </div>
 
       </>
