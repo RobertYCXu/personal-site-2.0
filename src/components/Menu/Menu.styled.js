@@ -4,8 +4,11 @@ export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${({ theme }) => theme.primaryLight};
-  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-80%)'};
+  background: white;
+  transform: ${
+    ({ open, isMobile }) => open ? 'translateX(0)' :
+      (isMobile ? 'translateX(-100%)' : 'translateX(-80%)')
+  };
   height: 100vh;
   border-right: 0.2rem solid ${({ theme }) => theme.primaryMedium};
   text-align: left;

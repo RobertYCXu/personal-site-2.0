@@ -4,9 +4,10 @@ import { StyledMenu } from './Menu.styled';
 
 const Menu = ({ open, setOpen, isMobile, ...props }) => {
 
-  const isHidden = open ? true : false;
-  const tabIndex = isHidden ? 0 : -1;
+  const tabIndex = open ? 0 : -1;
+
   let dots;
+
   if (isMobile) {
     dots = <span />
   }
@@ -15,7 +16,7 @@ const Menu = ({ open, setOpen, isMobile, ...props }) => {
   }
 
   return (
-    <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
+    <StyledMenu open={open} aria-hidden={!open} isMobile={isMobile} {...props}>
       {dots}
       <a href="/" tabIndex={tabIndex}>
         about

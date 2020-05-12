@@ -21,7 +21,7 @@ function App() {
         <div ref={node}>
           <FocusLock disabled={!open}>
             <MobileView>
-              <Burger open={open} setOpen={setOpen} aria-controls={menuId}k />
+              <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
             </MobileView>
             <Menu open={open} setOpen={setOpen} id={menuId} isMobile={isMobile} />
           </FocusLock>
