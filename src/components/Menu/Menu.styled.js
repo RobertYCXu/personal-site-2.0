@@ -10,10 +10,9 @@ export const StyledMenu = styled.nav`
       (isMobile ? 'translateX(-100%)' : 'translateX(-80%)')
   };
   height: 100vh;
-  border-right: 0.2rem solid ${({ theme }) => theme.primaryMedium};
+  border-right: ${({ isMobile }) => isMobile ? '1rem' : '0.3rem'} solid ${({ theme }) => theme.primaryMedium};
   text-align: left;
   padding: 4rem;
-  padding-right: 8rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -52,7 +51,7 @@ export const StyledMenu = styled.nav`
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 2px;
-    transform: translateY(390%) translateX(195%) rotate(90deg);
+    transform: translateY(460%) translateX(120%) rotate(90deg);
     cursor: pointer;
   }
 `;

@@ -1,15 +1,14 @@
 import React from 'react';
 import { bool } from 'prop-types';
 import { StyledMenu } from './Menu.styled';
+import { Link  } from 'react-router-dom';
 
 const Menu = ({ open, setOpen, isMobile, ...props }) => {
-
-  const tabIndex = open ? 0 : -1;
 
   let dots;
 
   if (isMobile) {
-    dots = <span />
+    dots = <></>
   }
   else {
     dots = <span onClick={() => setOpen(!open)}>...</span>
@@ -18,18 +17,11 @@ const Menu = ({ open, setOpen, isMobile, ...props }) => {
   return (
     <StyledMenu open={open} aria-hidden={!open} isMobile={isMobile} {...props}>
       {dots}
-      <a href="/" tabIndex={tabIndex}>
-        about
-      </a>
-      <a href="/" tabIndex={tabIndex}>
-        travels
-      </a>
-      <a href="/" tabIndex={tabIndex}>
-        blog
-      </a>
-      <a href="/" tabIndex={tabIndex}>
-        resume
-      </a>
+      <Link to="/">home</Link>
+      <Link to="/about">about</Link>
+      <Link to="/travels">travels</Link>
+      <Link to="/blog">blog</Link>
+      <Link to="/resume">resume</Link>
     </StyledMenu>
   )
 }

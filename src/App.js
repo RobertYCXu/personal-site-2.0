@@ -4,6 +4,7 @@ import { useOnClickOutside } from './hooks';
 import { GlobalStyles } from './global';
 import { theme } from './theme';
 import { Burger, Menu } from './components';
+import { RouteContainer } from './pages/RouteContainer'
 import FocusLock from 'react-focus-lock';
 import { MobileView, isMobile } from 'react-device-detect';
 
@@ -16,22 +17,18 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyles />
-        <div ref={node}>
-          <FocusLock disabled={!open}>
-            <MobileView>
-              <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-            </MobileView>
-            <Menu open={open} setOpen={setOpen} id={menuId} isMobile={isMobile} />
-          </FocusLock>
-        </div>
-        <div>
-          <h1>robert xu</h1>
-          <img src="https://image.flaticon.com/icons/svg/2813/2813094.svg" alt="burger icon" />
-        </div>
+      <GlobalStyles />
+      <div ref={node}>
+        <FocusLock disabled={!open}>
+          <MobileView>
+            <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+          </MobileView>
+          <Menu open={open} setOpen={setOpen} id={menuId} isMobile={isMobile} />
+        </FocusLock>
+      </div>
 
-      </>
+      <RouteContainer />
+
     </ThemeProvider>
   );
 }
