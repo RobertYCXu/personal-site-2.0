@@ -1,27 +1,42 @@
 import React from 'react';
 import { bool } from 'prop-types';
 import { StyledMenu } from './Menu.styled';
-import { Link  } from 'react-router-dom';
+import { NavLink  } from 'react-router-dom';
 
 const Menu = ({ open, setOpen, isMobile, ...props }) => {
 
   let dots;
+  let closeMenu = () => setOpen(!open);
+  let closeMenuIfMobile = () => isMobile ? closeMenu() : undefined;
+  let routes = [
+    { path: '/', name: 'home' },
+    { path: '/about', name: 'about' },
+    { path: '/travels', name: 'travels' },
+    { path: '/blog', name: 'blog' },
+    { path: '/resume', name: 'resume' }
+  ]
 
   if (isMobile) {
     dots = <></>
   }
   else {
-    dots = <span onClick={() => setOpen(!open)}>...</span>
+    dots = <span onClick={closeMenu}>...</span>
   }
+
 
   return (
     <StyledMenu open={open} aria-hidden={!open} isMobile={isMobile} {...props}>
       {dots}
-      <Link to="/">home</Link>
-      <Link to="/about">about</Link>
-      <Link to="/travels">travels</Link>
-      <Link to="/blog">blog</Link>
-      <Link to="/resume">resume</Link>
+      {routes.map(route => (
+        <NavLink
+          to={route.path}
+          activeClassName="active"
+          exact
+          onClick={closeMenuIfMobile}
+        >
+          {route.name}
+        </NavLink>
+      ))}
     </StyledMenu>
   )
 }

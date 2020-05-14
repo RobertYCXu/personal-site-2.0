@@ -19,4 +19,3 @@ function RouteContainer() {
 }
 
 export default RouteContainer;
-export { default as RouteContainer } from './RouteContainer';

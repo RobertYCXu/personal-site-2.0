@@ -4,7 +4,7 @@ import { useOnClickOutside } from './hooks';
 import { GlobalStyles } from './global';
 import { theme } from './theme';
 import { Burger, Menu } from './components';
-import { RouteContainer } from './pages/RouteContainer'
+import RouteContainer from './pages/RouteContainer'
 import FocusLock from 'react-focus-lock';
 import { MobileView, isMobile } from 'react-device-detect';
 

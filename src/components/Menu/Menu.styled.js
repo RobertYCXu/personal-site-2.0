@@ -54,4 +54,8 @@ export const StyledMenu = styled.nav`
     transform: translateY(460%) translateX(120%) rotate(90deg);
     cursor: pointer;
   }
+
+  .active {
+    color: ${({ theme }) => theme.primaryHover};
+  }
 `;
