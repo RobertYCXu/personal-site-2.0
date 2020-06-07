@@ -2,19 +2,13 @@ import React from 'react';
 import { bool } from 'prop-types';
 import { StyledMenu } from './Menu.styled';
 import { NavLink  } from 'react-router-dom';
+import { routes } from '../../global';
 
 const Menu = ({ open, setOpen, isMobile, ...props }) => {
 
   let dots;
   let closeMenu = () => setOpen(!open);
   let closeMenuIfMobile = () => isMobile ? closeMenu() : undefined;
-  let routes = [
-    { path: '/', name: 'home' },
-    { path: '/about', name: 'about' },
-    { path: '/travels', name: 'travels' },
-    { path: '/blog', name: 'blog' },
-    { path: '/resume', name: 'resume' }
-  ]
 
   if (isMobile) {
     dots = <></>
@@ -22,7 +16,6 @@ const Menu = ({ open, setOpen, isMobile, ...props }) => {
   else {
     dots = <span onClick={closeMenu}>...</span>
   }
-
 
   return (
     <StyledMenu open={open} aria-hidden={!open} isMobile={isMobile} {...props}>
@@ -33,6 +26,7 @@ const Menu = ({ open, setOpen, isMobile, ...props }) => {
           activeClassName="active"
           exact
           onClick={closeMenuIfMobile}
+          key={route.name}
         >
           {route.name}
         </NavLink>

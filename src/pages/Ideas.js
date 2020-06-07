@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledTravels = styled.div`
+const StyledIdeas = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -13,14 +13,14 @@ const StyledTravels = styled.div`
 `;
 
 
-function Travels() {
+function Ideas() {
   return (
-    <StyledTravels>
+    <StyledIdeas>
       <div className="header">
-        <h1>travels</h1>
+        <h1>ideas</h1>
       </div>
-    </StyledTravels>
+    </StyledIdeas>
   );
 }
 
-export default Travels;
+export default Ideas;
