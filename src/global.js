@@ -65,9 +65,11 @@ export const GlobalStyles = createGlobalStyle`
   p {
     font-size: 20pt;
     line-height: 2;
+    font-weight: 100;
   }
 
   .page {
+    position: absolute;
     z-index: -99;
     height: 100%;
     width: 100%;
