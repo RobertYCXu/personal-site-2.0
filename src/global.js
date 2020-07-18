@@ -70,7 +70,6 @@ export const GlobalStyles = createGlobalStyle`
 
   .page {
     position: absolute;
-    z-index: -99;
     height: 100%;
     width: 100%;
   }
