@@ -4,43 +4,37 @@ import ProfilePic from '../assets/profile.jpeg';
 import { Link  } from 'react-router-dom';
 
 const StyledAbout = styled.div`
-  height: 90%;
+  height: 70%;
   width: 70%;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .about-container {
+  .content {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 
-    .content {
-      display: flex;
+    img {
+      border-radius: 50%;
+      border: 0.8rem solid ${({ theme }) => theme.primaryAccent};
+      height: auto;
+      width: auto;
+      max-height: 15rem;
+      max-width: 15rem;
+    }
 
-      img {
-        border-radius: 50%;
-        border: 0.8rem solid ${({ theme }) => theme.primaryAccent};
-        height: auto;
-        width: auto;
-        max-height: 15rem;
-        max-width: 15rem;
-      }
+    p {
+      padding-left: 5rem;
+    }
 
-      p {
-        padding-left: 5rem;
-      }
+    a {
+      position: relative;
+      color: ${({ theme }) => theme.primaryAccent};
+      transition: color 200ms ease-in-out;
+    }
 
-      a {
-        position: relative;
-        color: ${({ theme }) => theme.primaryAccent};
-        transition: color 200ms ease-in-out;
-      }
-
-      a:hover {
-        color: red;
-      }
+    a:hover {
+      color: red;
     }
   }
 `;
@@ -48,7 +42,7 @@ const StyledAbout = styled.div`
 function About() {
   return (
     <StyledAbout>
-      <div className="about-container">
+      <div className="page-container">
         <div className="header">
           <h1>about</h1>
         </div>

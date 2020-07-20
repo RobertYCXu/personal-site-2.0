@@ -2,22 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledBlog = styled.div`
+  height: 70%;
+  width: 70%;
+  margin: auto;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding-right: 15rem;
+  justify-content: center;
+  align-items: center;
 
-  .header {
-    padding-top: 5rem;
-  }
 `;
 
 
 function Blog() {
   return (
     <StyledBlog>
-      <div className="header">
-        <h1>blog</h1>
+      <div className="page-container">
+        <div className="header">
+          <h1>blog</h1>
+        </div>
       </div>
     </StyledBlog>
   );

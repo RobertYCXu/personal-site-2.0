@@ -96,6 +96,14 @@ export const GlobalStyles = createGlobalStyle`
     transition: opacity 300ms, transform 300ms;
   }
 
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    height: 80%;
+  }
+
   .container {
     position: relative;
     height: 100%;

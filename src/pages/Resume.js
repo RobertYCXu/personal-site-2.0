@@ -2,22 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledResume = styled.div`
+  height: 70%;
+  width: 70%;
+  margin: auto;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding-right: 15rem;
+  justify-content: center;
+  align-items: center;
 
-  .header {
-    padding-top: 5rem;
-  }
 `;
 
 
 function Resume() {
   return (
     <StyledResume>
-      <div className="header">
-        <h1>resume</h1>
+      <div className="page-container">
+        <div className="header">
+          <h1>resume</h1>
+        </div>
       </div>
     </StyledResume>
   );
