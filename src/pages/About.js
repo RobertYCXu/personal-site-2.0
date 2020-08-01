@@ -11,7 +11,7 @@ const StyledAbout = styled.div`
   justify-content: center;
   align-items: center;
 
-  .content {
+  .content-container {
     display: flex;
 
     img {
@@ -46,7 +46,7 @@ function About() {
         <div className="header">
           <h1>about</h1>
         </div>
-        <div className="content">
+        <div className="content-container">
           <img src={ProfilePic} alt="robert xu" />
           <p>
             Hi! I'm a Computer Science student at the University of Waterloo and I'm currently a

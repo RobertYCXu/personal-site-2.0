@@ -51,6 +51,7 @@ export const GlobalStyles = createGlobalStyle`
 
   #main-menu {
     z-index: 1000;
+    position: fixed;
   }
 
   small {
