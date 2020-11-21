@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ScrollableAnchor from 'react-scrollable-anchor'
 
 const StyledTravels = styled.div`
   height: 70%;
@@ -32,6 +33,7 @@ const StyledTravels = styled.div`
     color: grey;
     cursor: pointer;
     transition: color 200ms ease-in-out;
+    display: block;
   }
 
   .country:hover {
@@ -53,15 +55,25 @@ const StyledTravels = styled.div`
   }
 `;
 
-const numImgs = 9;
+const numImgsIceland = 9;
 const countries = ["iceland", "hawaii", "san francisco", "new york", "toronto", "japan"]
 
-const imgs = [...Array(numImgs).keys()].map(i => {
+const icelandImgs = [...Array(numImgsIceland).keys()].map(i => {
+  if (i) {
+    return(
+      <div key={i} className="photo-container">
+        <img src={require(`../assets/iceland/${i}.jpg`)} alt=""/>
+      </div>
+    );
+  }
   return(
-    <div key={i} className="photo-container">
-      <img src={require(`../assets/iceland/${i}.jpg`)} alt=""/>
-    </div>
+    <ScrollableAnchor id={'iceland-section'}>
+      <div key={i} className="photo-container">
+        <img src={require(`../assets/iceland/${i}.jpg`)} alt=""/>
+      </div>
+    </ScrollableAnchor>
   );
+
 });
 
 function Travels() {
@@ -75,12 +87,12 @@ function Travels() {
           <div className="photos-menu">
             <div className="fixed-menu">
               {countries.map(country => (
-                <div className="country">{country}</div>
+                <a className="country" href={"#" + country + "-section"}>{country}</a>
               ))}
             </div>
           </div>
           <div className="photos-container">
-            { imgs }
+            { icelandImgs }
           </div>
         </div>
       </div>
